@@ -30,7 +30,8 @@ nav {
 
 .dropdown,
 .sub-dropdown {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     background-color: #333;
     list-style: none;
@@ -40,9 +41,10 @@ nav {
 }
 
 .main-menu > li:hover > .dropdown {
-    display: block;
+    visibility: visible;
     opacity: 1;
-    transition: opacity 0.3s ease;
+    top: 100%;
+    left: 0;
 }
 
 .dropdown > li {
@@ -56,13 +58,12 @@ nav {
 }
 
 .dropdown > li:hover > .sub-dropdown {
-    display: block;
-    left: 100%;
+    visibility: visible;
+    opacity: 1;
     top: 0;
+    left: 100%;
 }
 
 .sub-dropdown {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    min-width: 180px;
 }
